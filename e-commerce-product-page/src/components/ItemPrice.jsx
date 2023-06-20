@@ -4,7 +4,7 @@ import { useState } from 'react'
 import Minus from '../assets/images/icon-minus.svg'
 import Add from '../assets/images/icon-plus.svg'
 
-const ItemPrice = () => {
+const ItemPrice = ({ addToCart }) => {
 
     const [quantity, setQuantity] = useState(0)
 
@@ -15,6 +15,11 @@ const ItemPrice = () => {
     const handleDeductQuantity = () => {
         setQuantity((prevQuantity) => prevQuantity - 1)
     }
+
+    const handleAddToCart = () => {
+        addToCart(quantity)
+    }
+
 
     return (
         <div className="product-wrapper flex flex-col gap-4 px-7 pb-24">
@@ -34,9 +39,7 @@ const ItemPrice = () => {
                 <button onClick={handleAddQuantity} className="outline-none" aria-label="add"><img src={Add} alt="" aria-hidden="true"></img></button>
             </div>
 
-            <button className="outline-none font-bold tracking-wide rounded-lg py-3 px-3 flex justify-center gap-3 items-center bg-Orange text-white text-sm"><ion-icon className="text-white font-bold text-md" name="cart-outline"></ion-icon>Add to cart</button>
-
-
+            <button onClick={handleAddToCart} className="outline-none font-bold tracking-wide rounded-lg py-3 px-3 flex justify-center gap-3 items-center bg-Orange text-white text-sm"><ion-icon className="text-white font-bold text-md" name="cart-outline"></ion-icon>Add to cart</button>
         </div>
     )
 }
