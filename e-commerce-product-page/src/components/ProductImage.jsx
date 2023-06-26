@@ -54,6 +54,7 @@ const ProductImage = () => {
         <>
             <Navbar
                 openCart={handleDisplayCart}
+                cartItemsLength={cartItems.length}
             />
 
 

@@ -9,15 +9,13 @@ import profile from '../assets/images/image-avatar.png';
 
 import MenuBar from './MenuBar';
 
-const Navbar = ({ openCart }) => {
+const Navbar = ({ openCart, cartItemsLength }) => {
 
     const [showMobileNav, setShowMobileNav] = useState(false)
 
     const handleOpenCart = () => {
         openCart()
     }
-
-
 
     const handleOpenMenu = () => {
         setShowMobileNav(prevState => !prevState);
@@ -29,8 +27,13 @@ const Navbar = ({ openCart }) => {
                 <h1 className="font-bold text-4xl tracking-tighter">sneakers</h1>
             </div >
 
-            <div className="cart-wrapper flex items-center gap-5 ">
-                <button onClick={handleOpenCart} className="outline-none cursor-pointer"><img src={Cart} alt="cart" aria-hidden="true"></img></button>
+            <div className="cart-wrapper flex items-center gap-3 ">
+                <div className="flex relative py-3 px-3">
+                    <button onClick={handleOpenCart} className="outline-none cursor-pointer"><img src={Cart} alt="cart" aria-hidden="true"></img></button>
+                    {cartItemsLength > 0 &&
+                        <span className="px-2 font-bold text-sm text-white bg-Orange rounded-xl absolute top-0 right-0">{cartItemsLength}</span>}
+
+                </div>
                 <img className="w-8" src={profile} alt="profile" aria-hidden="true"></img>
             </div>
 
