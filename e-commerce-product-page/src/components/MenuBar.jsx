@@ -8,7 +8,7 @@ const MenuBar = ({ closeMenu }) => {
     }
 
     return (
-        <div className="w-full bg-Darkgrayishblue2 absolute top-0 left-0 z-40">
+        <div className="w-full min-h-screen bg-Darkgrayishblue2 absolute top-0 left-0 z-20">
             <div className="flex flex-col gap-12  w-3/5 h-screen py-8 px-5 bg-White">
                 <button onClick={handleCloseMenu} aria-label="close"><img className="w-5" src={Close}></img></button>
 

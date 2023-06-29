@@ -15,6 +15,7 @@ import Cart from './Cart';
 import Navbar from './Navbar';
 import ProductInfo from './ProductInfo';
 import ItemPrice from './ItemPrice';
+import ImageSelector from './ImageSelector';
 const ProductImage = () => {
     const [currentSlide, setCurrentSlide] = useState(0);
     const [isCartOpen, setIsCartOpen] = useState(false)
@@ -42,7 +43,7 @@ const ProductImage = () => {
     }
 
     const handlePrevSlide = () => {
-        setCurrentSlide((prevSlide) => (prevSlide - 1 + 1) & 4);
+        setCurrentSlide((prevSlide) => (prevSlide - 1) % 4);
     }
 
     const handleDisplayCart = () => {
@@ -52,24 +53,40 @@ const ProductImage = () => {
 
     return (
         <>
-            <Navbar
-                openCart={handleDisplayCart}
-                cartItemsLength={cartItems.length}
-            />
+            <div className='flex flex-col justify-center min-h-screen w-screen'>
+
+                <Navbar
+                    openCart={handleDisplayCart}
+                    cartItemsLength={cartItems.length}
+                />
+
+                <ImageSelector />
 
 
-            <div className="w-full h-80 relative overflow-hidden  z-30">
-                <div className="w-full flex z-0">
-                    <img className='duration-700 ease-in-out w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 ' src={Product1} alt="" style={{ transform: `translateX(-${currentSlide * 100}%)` }} />
-                    <img className='duration-700 ease-in-out w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2' src={Product2} alt="" style={{ transform: `translateX(-${currentSlide * 100}%)` }} />
-                    <img className='duration-700 ease-in-out w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2' src={Product3} alt="" style={{ transform: `translateX(-${currentSlide * 100}%)` }} />
-                    <img className='duration-700 ease-in-out w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 ' src={Product4} alt="" style={{ transform: `translateX(-${currentSlide * 100}%)` }} />
+                <div className="w-full h-80 relative overflow-hidden z-0 min-[768px]:hidden">
+                    <div className="w-screen h-auto flex z-0 overflow-hidden ">
+                        <img className='duration-700 ease-in-out w-screen -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 ' src={Product1} alt="" aria-hidden="true" style={{ transform: `translateX(-${currentSlide * 100}%)` }} />
+                        <img className='duration-700 ease-in-out w-screen -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2' src={Product2} alt="" aria-hidden="true" style={{ transform: `translateX(-${currentSlide * 100}%)` }} />
+                        <img className='duration-700 ease-in-out w-screen -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2' src={Product3} alt="" aria-hidden="true" style={{ transform: `translateX(-${currentSlide * 100}%)` }} />
+                        <img className='duration-700 ease-in-out w-screen -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 ' src={Product4} alt="" aria-hidden="true" style={{ transform: `translateX(-${currentSlide * 100}%)` }} />
+                    </div>
+
+                    <div className="w-full  px-5 flex justify-between absolute top-1/2">
+                        <button onClick={handlePrevSlide} className="flex justify-center items-center w-8 h-8 outline-none rounded-full bg-White cursor-pointer"><img className="-rotate-180 w-2 " src={Arrow} alt="" /></button>
+                        <button onClick={handleNextSlide} className="flex justify-center items-center w-8 h-8 outline-none rounded-full bg-White cursor-pointer"><img className="w-2" src={Arrow} alt="" /></button>
+                    </div>
+
                 </div>
 
-                <div className="w-full  px-5 flex justify-between absolute top-1/2">
-                    <button onClick={handlePrevSlide} className="flex justify-center items-center w-8 h-8 outline-none rounded-full bg-White cursor-pointer"><img className="-rotate-180 w-2 " src={Arrow} alt="" /></button>
-                    <button onClick={handleNextSlide} className="flex justify-center items-center w-8 h-8 outline-none rounded-full bg-White cursor-pointer"><img className="w-2" src={Arrow} alt="" /></button>
-                </div>
+
+
+
+                <ProductInfo
+
+                />
+                <ItemPrice
+                    addToCart={addToCart}
+                />
 
                 {
                     isCartOpen && (
@@ -80,17 +97,8 @@ const ProductImage = () => {
                     )
                 }
 
+
             </div>
-
-            <ProductInfo
-
-            />
-            <ItemPrice
-                addToCart={addToCart}
-            />
-
-
-
         </>
     )
 }

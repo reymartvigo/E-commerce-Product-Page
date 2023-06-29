@@ -13,6 +13,13 @@ export default {
       Lightgrayishblue: "hsl(223, 64%, 98%)",
       White: "hsl(0, 0%, 100%)",
     },
+
+    screen: {
+      md: "768px",
+      lg: "1024px",
+      xl: "1440px",
+      mobilesm: "320px",
+    },
   },
   plugins: [require("flowbite/plugin")],
 };
