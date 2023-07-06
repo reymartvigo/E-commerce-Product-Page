@@ -53,51 +53,53 @@ const ProductImage = () => {
 
     return (
         <>
-            <div className='flex flex-col justify-center min-h-screen w-screen'>
-
+            <div className="w-screen lg:w-11/12 lg:flex lg:flex-col lg:m-auto lg:items-center ">
                 <Navbar
                     openCart={handleDisplayCart}
                     cartItemsLength={cartItems.length}
                 />
 
-                <ImageSelector />
+                <div className="flex flex-col justify-center w-full z-0 min-h-screen lg:flex-row lg:w-60 lg:px-10">
 
+                    <ImageSelector />
 
-                <div className="w-full h-80 relative overflow-hidden z-0 min-[768px]:hidden">
-                    <div className="w-screen h-auto flex z-0 overflow-hidden ">
-                        <img className='duration-700 ease-in-out w-screen -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 ' src={Product1} alt="" aria-hidden="true" style={{ transform: `translateX(-${currentSlide * 100}%)` }} />
-                        <img className='duration-700 ease-in-out w-screen -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2' src={Product2} alt="" aria-hidden="true" style={{ transform: `translateX(-${currentSlide * 100}%)` }} />
-                        <img className='duration-700 ease-in-out w-screen -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2' src={Product3} alt="" aria-hidden="true" style={{ transform: `translateX(-${currentSlide * 100}%)` }} />
-                        <img className='duration-700 ease-in-out w-screen -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 ' src={Product4} alt="" aria-hidden="true" style={{ transform: `translateX(-${currentSlide * 100}%)` }} />
+                    <div className="h-80 relative overflow-hidden z-0 md:hidden">
+                        <div className="flex z-0 overflow-hidden">
+                            <img className='duration-700 ease-in-out w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 ' src={Product1} alt="" aria-hidden="true" style={{ transform: `translateX(-${currentSlide * 100}%)` }} />
+                            <img className='duration-700 ease-in-out w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2' src={Product2} alt="" aria-hidden="true" style={{ transform: `translateX(-${currentSlide * 100}%)` }} />
+                            <img className='duration-700 ease-in-out w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2' src={Product3} alt="" aria-hidden="true" style={{ transform: `translateX(-${currentSlide * 100}%)` }} />
+                            <img className='duration-700 ease-in-out w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 ' src={Product4} alt="" aria-hidden="true" style={{ transform: `translateX(-${currentSlide * 100}%)` }} />
+                        </div>
+
+                        <div className="w-full px-5 flex justify-between absolute top-1/2">
+                            <button onClick={handlePrevSlide} className="flex justify-center items-center w-8 h-8 outline-none rounded-full bg-White cursor-pointer"><img className="-rotate-180 w-2 " src={Arrow} alt="" /></button>
+                            <button onClick={handleNextSlide} className="flex justify-center items-center w-8 h-8 outline-none rounded-full bg-White cursor-pointer"><img className="w-2" src={Arrow} alt="" /></button>
+                        </div>
+
                     </div>
 
-                    <div className="w-full  px-5 flex justify-between absolute top-1/2">
-                        <button onClick={handlePrevSlide} className="flex justify-center items-center w-8 h-8 outline-none rounded-full bg-White cursor-pointer"><img className="-rotate-180 w-2 " src={Arrow} alt="" /></button>
-                        <button onClick={handleNextSlide} className="flex justify-center items-center w-8 h-8 outline-none rounded-full bg-White cursor-pointer"><img className="w-2" src={Arrow} alt="" /></button>
+                    <div className="lg:flex lg:flex-col lg:justify-center" >
+
+                        <ProductInfo
+
+                        />
+                        <ItemPrice
+                            addToCart={addToCart}
+                        />
+
                     </div>
+
+                    {
+                        isCartOpen && (
+                            <Cart
+                                deleteItem={deleteItem}
+                                cartItems={cartItems}
+                            />
+                        )
+                    }
+
 
                 </div>
-
-
-
-
-                <ProductInfo
-
-                />
-                <ItemPrice
-                    addToCart={addToCart}
-                />
-
-                {
-                    isCartOpen && (
-                        <Cart
-                            deleteItem={deleteItem}
-                            cartItems={cartItems}
-                        />
-                    )
-                }
-
-
             </div>
         </>
     )

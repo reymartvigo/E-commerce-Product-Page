@@ -16,19 +16,19 @@ import thumbnail4 from '../assets/images/image-product-4-thumbnail.jpg';
 const ImageSelector = () => {
     return (
         <>
-            <div className="image-wrapper flex justify-center items-center gap-3 w-full px-5 min-[320px]:hidden min-[768px]:flex">
-                <div className="main-image h-35 border-2 w-full bg-Verydarkblue border-7 rounded-xl">
+            <div className="image-wrapper  justify-center items-center gap-3 w-full px-5 sm:hidden md:flex lg:flex-col lg:gap-10 lg:px-0">
+                <div className="main-image h-35 border-4 w-full  bg-Verydarkblue border-7 rounded-xl lg:w-auto">
                     <img className="rounded-lg h-80 w-full" src={Product1} alt="" aria-label="true"></img>
                 </div>
 
-                <div className="thumbnails-wrapper flex flex-wrap gap-5 justify-center h-35  w-full">
-                    <img className="w-36 rounded-lg cursor-pointer border-Orange" src={thumbnail1} alt="" aria-label="true"></img>
-                    <img className="w-36 rounded-lg cursor-pointer border-Orange" src={thumbnail2} alt="" aria-label="true"></img>
-                    <img className="w-36 rounded-lg cursor-pointer border-Orange" src={thumbnail3} alt="" aria-label="true"></img>
-                    <img className="w-36 rounded-lg cursor-pointer border-Orange" src={thumbnail4} alt="" aria-label="true"></img>
-                </div>
+                <div className="thumbnails-wrapper flex flex-wrap gap-5 justify-center h-35  w-full lg:flex-nowrap  lg:h-auto lg:w-1/2">
+                    <img className="w-36 rounded-lg cursor-pointer border-Orange lg:w-12" src={thumbnail1} alt="" aria-label="true"></img>
+                    <img className="w-36 rounded-lg cursor-pointer border-Orange lg:w-12" src={thumbnail2} alt="" aria-label="true"></img>
+                    <img className="w-36 rounded-lg cursor-pointer border-Orange lg:w-12" src={thumbnail3} alt="" aria-label="true"></img>
+                    <img className="w-36 rounded-lg cursor-pointer border-Orange  lg:w-12" src={thumbnail4} alt="" aria-label="true"></img>
+                </div >
 
-            </div>
+            </div >
         </>
     )
 }

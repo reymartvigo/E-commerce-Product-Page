@@ -3,6 +3,13 @@ export default {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
     extend: {},
+
+    screens: {
+      sm: "320px",
+      md: "768px",
+      lg: "1024px",
+      xl: "1440px",
+    },
     colors: {
       Orange: "hsl(26, 100%, 55%)",
       Paleorange: "hsl(25, 100%, 94%)",
@@ -12,13 +19,6 @@ export default {
       Grayishblue: "hsl(220, 14%, 75%)",
       Lightgrayishblue: "hsl(223, 64%, 98%)",
       White: "hsl(0, 0%, 100%)",
-    },
-
-    screen: {
-      md: "768px",
-      lg: "1024px",
-      xl: "1440px",
-      mobilesm: "320px",
     },
   },
   plugins: [require("flowbite/plugin")],

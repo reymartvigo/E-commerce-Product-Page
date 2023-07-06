@@ -22,7 +22,7 @@ const ItemPrice = ({ addToCart }) => {
 
 
     return (
-        <div className="product-wrapper flex flex-col gap-4 px-7 pb-24 ">
+        <div className="flex flex-col gap-4 px-7 pb-24 lg:pb-0 lg:px-14">
             <div className="price-wrapper flex justify-between items-center">
                 <div className="flex items-center gap-3">
                     <h1 className="font-bold text-3xl" >$125.00</h1>
