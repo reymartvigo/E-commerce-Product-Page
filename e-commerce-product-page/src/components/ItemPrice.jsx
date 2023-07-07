@@ -22,8 +22,8 @@ const ItemPrice = ({ addToCart }) => {
 
 
     return (
-        <div className="flex flex-col gap-4 px-7 pb-24 lg:pb-0 lg:px-14">
-            <div className="price-wrapper flex justify-between items-center">
+        <div className="flex flex-col gap-4 px-7 pb-24 lg:pb-0 lg:px-0 lg:py-0">
+            <div className="price-wrapper flex justify-between items-strech lg:flex-col  lg:items-start">
                 <div className="flex items-center gap-3">
                     <h1 className="font-bold text-3xl" >$125.00</h1>
                     <span className="text-md text-Orange font-bold bg-Orange/[0.2] py-0.5 px-1 rounded-md">50%</span>
@@ -33,13 +33,15 @@ const ItemPrice = ({ addToCart }) => {
                 </div>
             </div>
 
-            <div className='quantity-wrapper flex justify-between items-center w-full  rounded-lg px-3 py-3 bg-Lightgrayishblue' >
-                <button disabled={quantity === 0} onClick={handleDeductQuantity} className="outline-none" aria-label="minus"><img src={Minus} alt="" aria-hidden="true"></img></button>
-                <span className="font-bold text-sm">{quantity}</span>
-                <button onClick={handleAddQuantity} className="outline-none" aria-label="add"><img src={Add} alt="" aria-hidden="true"></img></button>
-            </div>
+            <div className="lg:flex gap-3">
+                <div className='quantity-wrapper flex justify-between items-center w-full  rounded-lg px-3 py-3 bg-Lightgrayishblue lg:w-10/12 ' >
+                    <button disabled={quantity === 0} onClick={handleDeductQuantity} className="outline-none" aria-label="minus"><img src={Minus} alt="" aria-hidden="true"></img></button>
+                    <span className="font-bold text-sm">{quantity}</span>
+                    <button onClick={handleAddQuantity} className="outline-none" aria-label="add"><img src={Add} alt="" aria-hidden="true"></img></button>
+                </div>
 
-            <button disabled={quantity === 0} onClick={handleAddToCart} className="outline-none font-bold tracking-wide rounded-lg py-3 px-3 flex justify-center gap-3 items-center bg-Orange text-white text-sm"><ion-icon className="text-white font-bold text-md" name="cart-outline"></ion-icon>Add to cart</button>
+                <button disabled={quantity === 0} onClick={handleAddToCart} className="outline-none font-bold tracking-wide w-full rounded-lg py-3 px-3 flex justify-center gap-3 items-center bg-Orange text-white text-sm "><ion-icon className="text-white font-bold text-md" name="cart-outline"></ion-icon>Add to cart</button>
+            </div>
         </div>
     )
 }

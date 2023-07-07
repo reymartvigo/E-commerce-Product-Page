@@ -53,13 +53,13 @@ const ProductImage = () => {
 
     return (
         <>
-            <div className="w-screen lg:w-11/12 lg:flex lg:flex-col lg:m-auto lg:items-center ">
+            <div className="w-screen lg:w-11/12 min-h-screen lg:flex lg:flex-col lg:m-auto lg:items-center ">
                 <Navbar
                     openCart={handleDisplayCart}
                     cartItemsLength={cartItems.length}
                 />
 
-                <div className="flex flex-col justify-center w-full z-0 min-h-screen lg:flex-row lg:w-60 lg:px-10">
+                <div className="flex flex-col  z-0 h-full lg:flex-row lg:gap-20 lg:w-11/12 lg:pb-10 xl:w-8/12 xl:mt-10">
 
                     <ImageSelector />
 
@@ -78,7 +78,7 @@ const ProductImage = () => {
 
                     </div>
 
-                    <div className="lg:flex lg:flex-col lg:justify-center" >
+                    <div className=" lg:flex lg:flex-col lg: mt-10 justify-center xl:gap-5" >
 
                         <ProductInfo
 
