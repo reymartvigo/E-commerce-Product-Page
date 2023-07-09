@@ -7,9 +7,9 @@ const Cart = ({ cartItems, deleteItem }) => {
         deleteItem()
     }
     return (
-        <div className="z-80 absolute w-11/12 h-60 top-32 left-1/2 right-0 -translate-x-1/2 bg-White rounded-xl overflow-scroll scroll-smooth">
+        <div className=" z-80 shadow-2xl absolute w-11/12 h-60 sm:top-32 sm:left-1/2 sm:right-0 -translate-x-1/2 bg-White rounded-xl overflow-auto scroll-smooth lg:w-1/3 lg:left-3/4 lg:top-28 xl:w-1/4 ">
             <div className="px-5 py-4 border-b-2">
-                <span className="font-bold text-lg " >Cart</span>
+                <span className="font-bold text-lg" >Cart</span>
             </div>
 
             {

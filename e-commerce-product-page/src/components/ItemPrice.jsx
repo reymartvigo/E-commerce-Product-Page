@@ -40,7 +40,7 @@ const ItemPrice = ({ addToCart }) => {
                     <button onClick={handleAddQuantity} className="outline-none" aria-label="add"><img src={Add} alt="" aria-hidden="true"></img></button>
                 </div>
 
-                <button disabled={quantity === 0} onClick={handleAddToCart} className="outline-none font-bold tracking-wide w-full rounded-lg py-3 px-3 flex justify-center gap-3 items-center bg-Orange text-white text-sm "><ion-icon className="text-white font-bold text-md" name="cart-outline"></ion-icon>Add to cart</button>
+                <button disabled={quantity === 0} onClick={handleAddToCart} className="hover:opacity-80 cursor-pointer shadow-Orange shadow-xl outline-none font-bold tracking-wide w-full rounded-lg py-3 px-3 flex justify-center gap-3 items-center bg-Orange text-white text-sm "><ion-icon className="text-white font-bold text-md" name="cart-outline"></ion-icon>Add to cart</button>
             </div>
         </div>
     )

@@ -16,11 +16,13 @@ import Navbar from './Navbar';
 import ProductInfo from './ProductInfo';
 import ItemPrice from './ItemPrice';
 import ImageSelector from './ImageSelector';
+import ImageBox from './ImageBox';
+
 const ProductImage = () => {
     const [currentSlide, setCurrentSlide] = useState(0);
     const [isCartOpen, setIsCartOpen] = useState(false)
     const [cartItems, setCartItems] = useState([])
-
+    const [iSLightBoxOpen, setLightBoxOpen] = useState(false)
     const addToCart = (quantity) => {
         const newItem = {
             price: 125.00,
@@ -50,21 +52,30 @@ const ProductImage = () => {
         setIsCartOpen((prevState) => !prevState);
     }
 
+    const handleLightBox = () => {
+        setLightBoxOpen((prevState) => !prevState);
+    }
+
 
     return (
         <>
-            <div className="w-screen lg:w-11/12 min-h-screen lg:flex lg:flex-col lg:m-auto lg:items-center ">
+            <div className="w-screen lg:w-full min-h-screen lg:flex lg:flex-col lg:m-auto lg:items-center relative">
+
                 <Navbar
                     openCart={handleDisplayCart}
                     cartItemsLength={cartItems.length}
                 />
 
+                {iSLightBoxOpen && (<ImageBox closeLightBox={handleLightBox} />)}
+
+
                 <div className="flex flex-col  z-0 h-full lg:flex-row lg:gap-20 lg:w-11/12 lg:pb-10 xl:w-8/12 xl:mt-10">
 
-                    <ImageSelector />
+                    <ImageSelector
+                        lightbox={handleLightBox} />
 
                     <div className="h-80 relative overflow-hidden z-0 md:hidden">
-                        <div className="flex z-0 overflow-hidden">
+                        <div className="flex z-0 overflow-hidden " >
                             <img className='duration-700 ease-in-out w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 ' src={Product1} alt="" aria-hidden="true" style={{ transform: `translateX(-${currentSlide * 100}%)` }} />
                             <img className='duration-700 ease-in-out w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2' src={Product2} alt="" aria-hidden="true" style={{ transform: `translateX(-${currentSlide * 100}%)` }} />
                             <img className='duration-700 ease-in-out w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2' src={Product3} alt="" aria-hidden="true" style={{ transform: `translateX(-${currentSlide * 100}%)` }} />
@@ -88,6 +99,7 @@ const ProductImage = () => {
                         />
 
                     </div>
+
 
                     {
                         isCartOpen && (
