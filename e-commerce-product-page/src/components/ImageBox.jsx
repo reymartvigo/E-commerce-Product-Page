@@ -57,11 +57,10 @@ const ImageBox = ({ closeLightBox }) => {
             </div>
 
             <div className='flex gap-4'>
-                <img onClick={() => handleThumbnail(0)} className='flex gap-4 rounded-xl w-20 hover:opacity-60' src={thumbnail1} alt="" aria-label="true"></img>
-                <img onClick={() => handleThumbnail(1)} className='flex gap-4 rounded-xl w-20 hover:opacity-60' src={thumbnail2} alt="" aria-label="true"></img>
-                <img onClick={() => handleThumbnail(2)} className='flex gap-4 rounded-xl w-20 hover:opacity-60' src={thumbnail3} alt="" aria-label="true"></img>
-                <img onClick={() => handleThumbnail(3)
-                } className='flex gap-4 rounded-xl w-20 hover:opacity-60' src={thumbnail4} alt="" aria-label="true" ></img >
+                <img onClick={() => handleThumbnail(0)} className='cursor-pointer flex gap-4 rounded-xl w-20 hover:opacity-60' src={thumbnail1} alt="" aria-label="true"></img>
+                <img onClick={() => handleThumbnail(1)} className='cursor-pointer flex gap-4 rounded-xl w-20 hover:opacity-60' src={thumbnail2} alt="" aria-label="true"></img>
+                <img onClick={() => handleThumbnail(2)} className='cursor-pointer flex gap-4 rounded-xl w-20 hover:opacity-60' src={thumbnail3} alt="" aria-label="true"></img>
+                <img onClick={() => handleThumbnail(3)} className='cursor-pointer flex gap-4 rounded-xl w-20 hover:opacity-60' src={thumbnail4} alt="" aria-label="true" ></img >
             </div >
         </div >
     )

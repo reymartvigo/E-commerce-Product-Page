@@ -69,7 +69,7 @@ const ProductImage = () => {
                 {iSLightBoxOpen && (<ImageBox closeLightBox={handleLightBox} />)}
 
 
-                <div className="flex flex-col  z-0 h-full lg:flex-row lg:gap-20 lg:w-11/12 lg:pb-10 xl:w-8/12 xl:mt-10">
+                <div className="flex flex-col  z-0 h-full lg:flex-row lg:gap-20 lg:w-11/12 lg:pb-16 xl:w-8/12 xl:mt-10 border-red-600 border-2">
 
                     <ImageSelector
                         lightbox={handleLightBox} />
