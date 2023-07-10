@@ -13,6 +13,7 @@ import 'flowbite/dist/flowbite.css';
 import Arrow from '../assets/images/icon-next.svg';
 import Cart from './Cart';
 import Navbar from './Navbar';
+import MenuBar from './MenuBar';
 import ProductInfo from './ProductInfo';
 import ItemPrice from './ItemPrice';
 import ImageSelector from './ImageSelector';
@@ -23,6 +24,12 @@ const ProductImage = () => {
     const [isCartOpen, setIsCartOpen] = useState(false)
     const [cartItems, setCartItems] = useState([])
     const [iSLightBoxOpen, setLightBoxOpen] = useState(false)
+    const [isMenuOpen, setisMenuOpen] = useState(false)
+
+
+    const handleMenuBar = () => {
+        setisMenuOpen((prevState) => !prevState)
+    }
     const addToCart = (quantity) => {
         const newItem = {
             price: 125.00,
@@ -59,17 +66,23 @@ const ProductImage = () => {
 
     return (
         <>
-            <div className="w-screen lg:w-full min-h-screen lg:flex lg:flex-col lg:m-auto lg:items-center relative">
+            <div className="main-div w-screen lg:w-full min-h-screen lg:flex lg:flex-col lg:m-auto lg:items-center relative ">
 
                 <Navbar
                     openCart={handleDisplayCart}
                     cartItemsLength={cartItems.length}
+                    openMenu={handleMenuBar}
                 />
+
+                {isMenuOpen &&
+                    (<MenuBar closeMenu={handleMenuBar} />)
+
+                }
 
                 {iSLightBoxOpen && (<ImageBox closeLightBox={handleLightBox} />)}
 
 
-                <div className="flex flex-col  z-0 h-full lg:flex-row lg:gap-20 lg:w-11/12 lg:pb-16 xl:w-8/12 xl:mt-10">
+                <div className="flex flex-col  z-0 h-full lg:flex-row lg:gap-17 lg:w-11/12 lg:pb-16 xl:w-8/12 xl:mt-10 xl:gap-20 xl:pb-20">
 
                     <ImageSelector
                         lightbox={handleLightBox} />

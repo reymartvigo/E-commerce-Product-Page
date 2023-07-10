@@ -39,7 +39,7 @@ const ImageBox = ({ closeLightBox }) => {
     }
 
     return (
-        <div className="w-full min-h-screen absolute z-10 bg-Darkgrayishblue2 lg:flex flex-col items-center justify-center gap-4 md:hidden">
+        <div className=" w-full h-full absolute z-10 bg-Verydarkblue2 lg:flex flex-col items-center justify-center gap-4 md:hidden sm:hidden">
             <div className="flex flex-col w-4/12 gap-4 px-8 items-end relative">
                 <button onClick={handleCloseLightBox} aria-label="close" className="w-fit outline-none"><svg width="14" height="15" xmlns="http://www.w3.org/2000/svg"><path d="m11.596.782 2.122 2.122L9.12 7.499l4.597 4.597-2.122 2.122L7 9.62l-4.595 4.597-2.122-2.122L4.878 7.5.282 2.904 2.404.782l4.595 4.596L11.596.782Z" fill="white" fill-rule="evenodd" /></svg></button>
                 <div className="flex flex-col justify-center items-center">

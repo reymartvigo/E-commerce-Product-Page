@@ -28,9 +28,9 @@ const ImageSelector = ({ lightbox }) => {
 
     return (
         <>
-            <div className="border-7 items-center md:gap-7 md:w-full px-16 sm:hidden md:flex lg:w-96 lg:flex-col lg:gap-10 lg:px-0 lg:mt-10 ">
+            <div className="border-7 items-center md:gap-7 md:w-full px-16 sm:hidden md:flex md:flex-col lg:w-96 lg:flex-col lg:gap-10 lg:px-0 lg:mt-10">
                 <div className="md:h-35 rounded-4xl lg:w-auto" onClick={handleLightBox}>
-                    <img className="rounded-2xl md:mt-5 lg:h-80 md:w-96  cursor-pointer xl:h-96 xl:w-full" src={currentSlide} alt="" aria-label="true"></img>
+                    <img className="rounded-2xl md:mt-5 lg:h-80 md:w-80 cursor-pointer xl:h-96 xl:w-full" src={currentSlide} alt="" aria-label="true"></img>
                 </div>
 
                 <div className="flex md:justify-center md:flex-wrap md:gap-5 md:h-auto md:w-auto lg:flex-nowrap lg:h-auto ">
