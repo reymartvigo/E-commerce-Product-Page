@@ -33,7 +33,7 @@ const ItemPrice = ({ addToCart }) => {
                 </div>
             </div>
 
-            <div className="lg:flex gap-3">
+            <div className="sm:flex sm:flex-col sm: gap-5 lg:flex-row">
                 <div className='quantity-wrapper flex justify-between items-center w-full  rounded-lg px-3 py-3 bg-Lightgrayishblue lg:w-10/12 ' >
                     <button disabled={quantity === 0} onClick={handleDeductQuantity} className="outline-none" aria-label="minus"><img src={Minus} alt="" aria-hidden="true"></img></button>
                     <span className="font-bold text-sm">{quantity}</span>
