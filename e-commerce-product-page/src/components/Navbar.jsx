@@ -40,7 +40,7 @@ const Navbar = ({ openCart, cartItemsLength, openMenu }) => {
 
             <div className="cart-wrapper flex items-center gap-3 ">
                 <div className="flex relative py-3 px-3">
-                    <button onClick={handleOpenCart} className="outline-none cursor-pointer"><img src={Cart} alt="cart" aria-hidden="true"></img></button>
+                    <button onClick={handleOpenCart} className="outline-none cursor-pointer" aria-label="cart"><img src={Cart} alt="cart" aria-hidden="true"></img></button>
                     {cartItemsLength > 0 &&
                         <span className="px-2 font-bold text-sm text-white bg-Orange rounded-xl absolute top-0 right-0">{cartItemsLength}</span>}
 
